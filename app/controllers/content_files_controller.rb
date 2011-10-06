@@ -1,4 +1,5 @@
 class ContentFilesController < Spree::BaseController
+  ssl_required
 
   def create
     @content_file = ContentFile.new(params[:content_file])

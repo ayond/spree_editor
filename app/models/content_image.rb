@@ -3,7 +3,8 @@ class ContentImage < Image
     :styles => {:mini => '48x48#', :large => '600x600>'},
     :default_style => :large,
     :url => "/assets/content_images/:id/:style/:basename.:extension",
-    :path => Rails.env == 'production' ? ":rails_root/public/assets/content_images/:id/:basename.:extension" : "assets/content_images/:id/:basename.:extension",
+    :path => Rails.env == 'production' ? "assets/content_images/:id/:basename.:extension" :
+                      ":rails_root/public/assets/content_images/:id/:basename.:extension",
     :storage => Rails.env == 'production' ? 's3' : 'filesystem',
     :s3_credentials => {
       :access_key_id => ENV['S3_KEY'],
